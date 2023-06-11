@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+    <title>VR World</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Amatic SC', cursive;
+        }
+
+        .navbar {
+            width: 98%;
+            height: 70px;
+            background-color: rgb(136, 160, 182);
+            margin: auto;
+            border-radius: 5px;
+            margin-top: 4px;
+        }
+
+        .menu {
+            display: inline-block;
+            list-style: none;
+            width: 40%;
+            color: #ddbd3e;
+            font-weight: bolder;
+            font-size: 18pt;
+            box-sizing: border-box;
+            margin-left: 50px;
+
+
+        }
+
+        .menu li {
+            display: inline-block;
+            width: 20%;
+            background-color: #B33951;
+            padding: 5px;
+            text-align: center;
+            margin-left: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .menu li:hover{
+            background-color: aliceblue;
+            color: #B33951;
+            border: 3px solid #B33951;
+        }
+        input{
+            width: 30px;
+            height: 30px;
+            border: 2px solid #B33951;
+            border-radius: 50%;
+            float: right;
+            margin-right: 50px;
+            transition: width 0.5s;
+        }
+        input:hover{
+            border: 2px solid #B33951;
+            width: 100px;
+            border-radius: 5px;
+        }
+
+        input:focus{
+            outline: none;
+        }
+        .menu,input{
+            margin-top: 15px;
+        }
+        .card-content{
+            width: 90%;
+            height: 170px;
+            margin: 10px auto;
+           
+        }
+        .card{
+            width: 16%;
+            height: 150px;
+            border: 4px solid #ddbd3e;
+            background-color: #18243c;
+            display: inline-block;
+            margin-left: 3%;
+            border-radius: 10px;
+            cursor: pointer;
+            overflow: hidden;
+        }
+        .card img{
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s;
+        }
+        .card:hover img{
+            transform: scale(1.2);
+        }
+        .scenery{
+            width: 98%;
+            height: 320px;
+            margin: auto;
+            position: relative;
+        }
+        .car{
+            width: 240px;
+            height: 150px;
+            position: absolute;
+            top: 100px;
+            left: 40%;
+            transition: transform 5s;
+        }
+        .car-window{
+            width: 65%;
+            height: 30%;
+            background-color: #ddbd3e;
+            position: absolute;
+            top: 10px;
+            left: 15%;
+            border-top-left-radius: 20%;
+            border-top-right-radius: 20%;
+            /* transform: skew(4deg); */
+        }
+        .car-window .back,.front{
+            width: 40%;
+            height: 80%;
+            background-color: aliceblue;
+            display: inline-block;
+            margin-top: 10px;
+            position: absolute;
+            left: 6%;
+            border-radius: 10%;
+        }
+        .car-window .front{
+            left: 54%;
+
+        }
+        .car-body{
+            width: 100%;
+            height: 40%;
+            background-color: #B33951;
+            position: absolute;
+            top: 30%;
+            border-top-left-radius: 5%;
+            border-top-right-radius: 15%;
+        }
+        .front-wheel,.back-wheel{
+            width: 50px;
+            height: 50px;
+            background-color: #333;
+            border-radius: 50%;
+            position: absolute;
+            top:55%;
+            left: 15%;
+            transform-origin: center;
+            border: 4px solid #ddbd3e;
+        }
+        .front-wheel{
+            left: 70%;
+        }
+        .wheel{
+            transition: transform 5s;
+        }
+        .s1,.s2,.s3,.s4,.s5{
+            width: 70%;
+            height: 3px;
+            display: inline-block;
+            background-color: aliceblue;
+            margin: auto;
+            position: absolute;
+            inset: 0;
+            transform-origin: center;
+        }
+        .s2{
+            transform: rotate(-72deg);
+        }
+        .s3{
+            transform: rotate(-144deg);
+        }
+        .s4{
+            transform: rotate(-216deg);
+        }
+        .s5{
+            transform: rotate(-288deg);
+        }
+        .wheel-center{
+            width: 15px;
+            height: 15px;
+            background-color: #18243c;
+            border-radius: 50%;
+            margin: auto;
+            position: absolute;
+            inset: 0;
+            
+        }
+        .car:hover{
+            transform: translateX(200px);
+
+        }
+        .car:hover .wheel{
+            transform: rotate(360deg);
+        }
+        
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <ul class="menu">
+            <li>Car</li>
+            <li>Planet</li>
+            <li>City</li>
+        </ul>
+        <input type="text">
+    </nav>
+    <div class="card-content"> 
+        <div class="card">
+            <img src="./Photos/planet.png" alt="">
+        </div>
+        <div class="card">
+            <img src="./Photos/planet2.png" alt="">
+        </div>
+        <div class="card">
+            <img src="./Photos/planet3.png" alt="">
+        </div>
+        <div class="card">
+            <img src="./Photos/planet4.png" alt="">
+        </div>
+        <div class="card">
+            <img src="./Photos/planet5.png" alt="">
+        </div>
+        
+    </div>
+    <div class="scenery">
+        <div class="car">
+            <div class="car-window">
+                <div class="back">
+
+                </div>
+                <div class="front">
+
+                </div>
+
+            </div>
+            <div class="car-body">
+
+            </div>
+
+            <div class="front-wheel wheel">
+                <span class="s1"></span>
+                <span class="s2"></span>
+                <span class="s3"></span>
+                <span class="s4"></span>
+                <span class="s5"></span>
+                <span class="wheel-center"></span>
+
+            </div>
+            <div class="back-wheel wheel">
+                <span class="s1"></span>
+                <span class="s2"></span>
+                <span class="s3"></span>
+                <span class="s4"></span>
+                <span class="s5"></span>
+                <span class="wheel-center"></span>
+
+            </div>
+
+        </div>
+        
+
+
+    </div>
+
+
+</body>
+
+</html>
