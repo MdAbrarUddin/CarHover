@@ -116,7 +116,7 @@ input:focus{
 .car-window .back,.front{
     width: 40%;
     height: 80%;
-    background-color: aliceblue;
+    background-color:beige;
     display: inline-block;
     margin-top: 10px;
     position: absolute;
